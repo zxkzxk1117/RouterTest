@@ -1,0 +1,7 @@
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page title="404 not found">
+		<content>
+			<Label text="404 not found"></Label>
+		</content> 
+	</Page>
+</mvc:View>

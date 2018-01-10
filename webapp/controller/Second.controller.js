@@ -1,0 +1,33 @@
+sap.ui.define(["sap/ui/core/mvc/Controller","sap/ui/core/routing/History", "sap/m/MessageToast"],function(Controller, History, MessageToast){
+	return Controller.extend("RouterTest001.controller.Second", {
+		onInit:function(){
+			this.router = sap.ui.core.UIComponent.getRouterFor(this);
+			this.router.getRoute("SecondView").attachMatched(this._onRouteMatched, this); //监听路由跳转
+			
+			// this.router.attachRouteMatched(function (oEvent){
+			// 	var sRouteName = oEvent.getParameter("name");
+			// 	// do something, i.e. send usage statistics to back end
+			// 	// in order to improve our app and the user experience (Build-Measure-Learn cycle)
+			// 	jQuery.sap.log.info("User accessed route " + sRouteName + ", timestamp = " + new Date().getTime());
+			// });
+		},
+		_onRouteMatched: function(oEvent){
+			var para = oEvent.getParameter("arguments");
+			var bookMarkPara = para["?query"];
+			// alert('receive Para Name:'+para.name);
+			// alert('receive Para sex:'+para.sex);
+			// alert(bookMarkPara.pageName);
+		},
+		BackToFirst: function(oEvent){
+			var oHistory, sPreviousHash;
+			oHistory = History.getInstance();
+			sPreviousHash = oHistory.getPreviousHash();
+			if (sPreviousHash !== undefined) {
+				window.history.go(-1);
+			}
+		},
+		To404: function(){
+			this.router.getTargets().display("FZF");
+		}
+	});
+});

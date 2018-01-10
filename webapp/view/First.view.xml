@@ -1,0 +1,8 @@
+<mvc:View controllerName="RouterTest001.controller.First" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" 
+	xmlns="sap.m">
+			<Page title="这是第一页">
+				<content>
+					<Button text="点击进入第二页" press="ToSecond"></Button>
+				</content>
+			</Page>
+</mvc:View>

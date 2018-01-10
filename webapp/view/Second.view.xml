@@ -1,0 +1,8 @@
+<mvc:View controllerName="RouterTest001.controller.Second" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+			<Page showNavButton="true" navButtonPress="BackToFirst" title="这是第二页">
+				<content>
+					<Button text="点击进入404" press="To404"></Button>
+				</content>
+			</Page>
+</mvc:View>
